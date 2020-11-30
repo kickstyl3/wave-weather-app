@@ -13,7 +13,7 @@ const CitySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    details: {
+    details: [{
         sunrise: {
             type: String,
             required: true
@@ -62,7 +62,7 @@ const CitySchema = new mongoose.Schema({
             type: String,
             required: true
         }
-    },
+    }],
     cityFollowers: [{
         type: 'ObjectId',
         required: true,
