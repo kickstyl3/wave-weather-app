@@ -1,9 +1,6 @@
 const City = require('../models/City');
 const User = require('../models/User');
 
-const utils = require('../utils');
-const config = require('../config/config');
-
 module.exports = {
     get: {
         myCities: async (req, res, next) => {
