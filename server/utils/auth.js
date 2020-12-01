@@ -9,8 +9,8 @@ const hashPassword = async (password) => {
     return hashedPassword;
 }
 
-const checkPassword = async (username, password) => {
-    const user = await User.findOne({ username });
+const checkPassword = async (email, password) => {
+    const user = await User.findOne({ email });
 
     const status = await bcrypt.compare(password, user.password);
 

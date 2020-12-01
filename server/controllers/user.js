@@ -20,6 +20,8 @@ module.exports = {
     post: {
         signup: async (req, res, next) => {
             const { name, email, password } = req.body;
+            console.log(req.body);
+            console.log(name, email, password);
             const hashedPassword = await utils.auth.hashPassword(password);
 
             try {
@@ -41,6 +43,7 @@ module.exports = {
 
         login: async (req, res, next) => {
             const { email, password } = req.body;
+            console.log(req.body);
 
             try {
                 const status = await utils.auth.checkPassword(email, password);
@@ -55,11 +58,12 @@ module.exports = {
                 res.header('Authorization', token).send(user);
             } catch (e) {
                 console.error(e);
-                next();
+                next(); 
             }
         },
 
         verifyLogin: (req, res, next) => {
+            console.log(req.headers);
             const token = req.headers.authorization || '';
 
             Promise.all([

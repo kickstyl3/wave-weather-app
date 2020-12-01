@@ -1,5 +1,5 @@
 const user = require('../routes/user');
-const city = require('../routes/tree');
+const city = require('../routes/city');
 
 module.exports = (app) => {
     app.use('/api/user', user);
