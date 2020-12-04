@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     setInterval(() => {
       this.seconds = new Date().getSeconds();
-      this.minutes = new Date().getMinutes();
-      this.hour = new Date().getHours();
+      this.minutes = new Date().getMinutes() + ':';
+      this.hour = new Date().getHours() + ':';
     }, 1000)
   }
 

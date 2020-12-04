@@ -17,6 +17,9 @@ import { HeaderComponent } from '../app/core/header/header.component';
     CoreModule
   ],
   providers: [],
-  bootstrap: [AppComponent, HeaderComponent]
+  bootstrap: [
+    AppComponent,
+    HeaderComponent
+  ]
 })
 export class AppModule { }

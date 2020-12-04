@@ -1,12 +1,9 @@
 .header-wrapper {
     display: flex;
     background-color: rgba(0, 0, 0, 0.781);
-    height: 60px;
     align-items: center;
-}
-
-.logo-wrapper {
-    margin-left: 10px;
+    justify-content: space-between;
+    padding: 5px 10px;
 }
 
 .logo {
@@ -14,6 +11,5 @@
 }
 
 .date-and-time {
-    color: white;
-    align-items: center;
+    color: rgba(255, 255, 255, 0.918);
 }
