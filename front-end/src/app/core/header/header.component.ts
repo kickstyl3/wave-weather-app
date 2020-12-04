@@ -8,18 +8,9 @@ import { Component, Injectable, OnInit } from '@angular/core';
 
 export class HeaderComponent implements OnInit {
 
-  seconds;
-  minutes;
-  hour;
-
   constructor() { }
 
   ngOnInit(): void {
-    setInterval(() => {
-      this.seconds = new Date().getSeconds();
-      this.minutes = new Date().getMinutes() + ':';
-      this.hour = new Date().getHours() + ':';
-    }, 1000)
   }
 
 }
