@@ -3,18 +3,26 @@
     flex-direction: row;
 }
 
-button {
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+li {
     padding: 10px 25px;
     border: none;
     outline: none;
     border-radius: 10px;
-    color: white;
 }
 
-button:hover {
+li:hover {
     background-color: rgba(61, 107, 138, 0.74);
     cursor: pointer;
+}
+
+a {
     color: white;
+    text-decoration: none;
 }
 
 .login-btn {
