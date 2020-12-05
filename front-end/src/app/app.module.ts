@@ -8,6 +8,7 @@ import { CoreModule } from '../app/core/core.module';
 import { HeaderComponent } from '../app/core/header/header.component';
 import { FooterComponent } from '../app/core/footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { UserRoutingModule} from '../app/user/user-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    UserRoutingModule
   ],
   providers: [],
   bootstrap: [
