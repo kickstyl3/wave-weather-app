@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { CoreModule } from '../app/core/core.module';
 import { HeaderComponent } from '../app/core/header/header.component';
 import { FooterComponent } from '../app/core/footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
