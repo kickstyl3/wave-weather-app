@@ -46,13 +46,13 @@ input::placeholder {
     color: rgba(255, 255, 255, 0.664);
 }
 
-.email {
+input[name=email] {
     background: url(../../../assets/img/input-icons/email-svg.svg) no-repeat 2% 50%;
     background-size: 40px;
     padding-left: 60px;
 }
 
-.password {
+input[name=password] {
     background: url(../../../assets/img/input-icons/password-svg.svg) no-repeat 2% 50%;
     background-size: 40px;
     padding-left: 60px;

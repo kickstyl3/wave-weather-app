@@ -46,25 +46,25 @@ input::placeholder {
     color: rgba(255, 255, 255, 0.664);
 }
 
-.name {
+input[name=name] {
     background: url(../../../assets/img/input-icons/name-svg.svg) no-repeat 2% 50%;
     background-size: 40px;
     padding-left: 60px;
 }
 
-.email {
+input[name=email] {
     background: url(../../../assets/img/input-icons/email-svg.svg) no-repeat 2% 50%;
     background-size: 40px;
     padding-left: 60px;
 }
 
-.password {
+input[name=password] {
     background: url(../../../assets/img/input-icons/password-svg.svg) no-repeat 2% 50%;
     background-size: 40px;
     padding-left: 60px;
 }
 
-.confirm-password {
+input[name=confirmPassword] {
     background: url(../../../assets/img/input-icons/confirm-svg.svg) no-repeat 2% 50%;
     background-size: 40px;
     padding-left: 60px;

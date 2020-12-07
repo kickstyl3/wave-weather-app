@@ -8,7 +8,8 @@ import { CoreModule } from '../app/core/core.module';
 import { HeaderComponent } from '../app/core/header/header.component';
 import { FooterComponent } from '../app/core/footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { UserRoutingModule} from '../app/user/user-routing.module';
+import { UserRoutingModule } from '../app/user/user-routing.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UserRoutingModule} from '../app/user/user-routing.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    UserRoutingModule
+    UserRoutingModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [
