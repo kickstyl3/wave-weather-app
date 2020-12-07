@@ -10,7 +10,7 @@
     justify-content: center;
     flex-direction: column;
     width: 32%;
-    height: 35em;
+    height: 30em;
     background-color: rgba(0, 0, 0, 0.753);
 }
 
@@ -39,6 +39,10 @@ input {
     padding: 10px;
     margin: 15px 0;
     padding-left: 60px;
+}
+
+input:focus {
+    border: 1px solid black;
 }
 
 input::placeholder {
