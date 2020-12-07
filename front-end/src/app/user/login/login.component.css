@@ -1,0 +1,89 @@
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 32%;
+    height: 35em;
+    background-color: rgba(0, 0, 0, 0.753);
+}
+
+.login-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 38px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 20px;
+}
+
+input {
+    font-size: 16px;
+    width: 70%;
+    flex-basis: 60px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    outline: none;
+    padding: 10px;
+    margin: 15px 0;
+    padding-left: 60px;
+}
+
+input::placeholder {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.664);
+}
+
+.email {
+    background: url(../../../assets/img/input-icons/email-svg.svg) no-repeat 2% 50%;
+    background-size: 40px;
+    padding-left: 60px;
+}
+
+.password {
+    background: url(../../../assets/img/input-icons/password-svg.svg) no-repeat 2% 50%;
+    background-size: 40px;
+    padding-left: 60px;
+}
+
+button {
+    width: 70%;
+    flex-basis: 40px;
+    background-color: #00A1C5;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #034655;
+}
+
+p {
+    margin-top: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+a {
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
