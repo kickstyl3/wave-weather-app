@@ -5,6 +5,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './auth.service';
 import { RouterModule } from '@angular/router';
+import { authInterceptorProvider } from './auth.interceptor';
 
 @NgModule({
   declarations: [HeaderComponent, NavigationComponent, FooterComponent],
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    authInterceptorProvider
   ],
   exports: [
     HeaderComponent,

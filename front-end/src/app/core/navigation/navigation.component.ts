@@ -20,8 +20,6 @@ export class NavigationComponent implements OnInit {
   }
   
   logoutHandler(): void {
-    console.log(this.isLogged$);
-    console.log(this.isReady$);
     this.authService.logout().subscribe(() => this.router.navigate(['/']));
   }
 }

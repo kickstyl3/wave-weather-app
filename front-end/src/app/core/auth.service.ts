@@ -16,26 +16,26 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(data: any): Observable<any> {
-    return this.http.post(`http://localhost:8000/api/user/login`, data).pipe(
+    return this.http.post(`/user/login`, data).pipe(
       tap((user: IUser) =>
         this._currentUser.next(user))
     );
   }
 
   signup(data: any): Observable<any> {
-    return this.http.post(`http://localhost:8000/api/user/signup`, data).pipe(
+    return this.http.post(`/user/signup`, data).pipe(
       tap((user: IUser) => this._currentUser.next(user))
     );
   }
 
   logout(): Observable<any> {
-    return this.http.post(`http://localhost:8000/api/user/logout`, {}).pipe(
+    return this.http.post(`/user/logout`, {}).pipe(
       tap((user: IUser) => this._currentUser.next(null))
     );
   }
 
   authenticate(): Observable<any> {
-    return this.http.get(`http://localhost:8000/api/user/verify`).pipe(
+    return this.http.get(`/user/verify`).pipe(
       tap((user: IUser) => this._currentUser.next(user)),
       catchError(() => {
         this._currentUser.next(null);
