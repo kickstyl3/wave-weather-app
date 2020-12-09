@@ -17,7 +17,8 @@ export class AuthService {
 
   login(data: any): Observable<any> {
     return this.http.post(`http://localhost:8000/api/user/login`, data).pipe(
-      tap((user: IUser) => this._currentUser.next(user))
+      tap((user: IUser) =>
+        this._currentUser.next(user))
     );
   }
 
