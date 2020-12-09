@@ -26,15 +26,18 @@ a {
     padding: 10px 20px;
 }
 
-.home-btn {
+.home, .login, .account, .my-cities {
     margin-right: 10px;
 }
 
-.login-btn {
-    margin-right: 10px;
+.login {
     background-color: #003E87;
 }
 
-.sign-up-btn {
+.sign-up {
     background-color: #007661;
+}
+
+.logout {
+    background-color: rgb(23, 139, 95);
 }

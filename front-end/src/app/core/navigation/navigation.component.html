@@ -1,14 +1,23 @@
-<nav class="navigation-wrapper">
+<nav *ngIf="isReady$" class="navigation-wrapper">
     <article>
         <ul>
-            <li class="home-btn">
+            <li class="home">
                 <a href="/">Home</a>
             </li>
-            <li class="login-btn">
+            <li *ngIf="isLogged$" class="login">
                 <a href="/login">Login</a>
             </li>
-            <li class="sign-up-btn">
+            <li *ngIf="isLogged$" class="sign-up">
                 <a href="/signup">Sign Up</a>
+            </li>
+            <li *ngIf="isLogged$" class="my-cities">
+                <a href="/my-cities">My Cities</a>
+            </li>
+            <li *ngIf="isLogged$" class="account">
+                <a href="/account">Account</a>
+            </li>
+            <li *ngIf="isLogged$" class="logout">
+                <a (click)="logoutHandler()">Logout</a>
             </li>
         </ul>
     </article>
