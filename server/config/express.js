@@ -4,7 +4,11 @@ const cors = require('cors');
 
 module.exports = (app) => {
     app.use(cors({
-        credentials: true
+        credentials: true,
+        origin: 'http://localhost:4200',
+        exposedHeaders: [
+            'user'
+        ]
     }));
 
     app.use(express.json());
