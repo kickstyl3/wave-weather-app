@@ -10,6 +10,7 @@ import { FooterComponent } from '../app/core/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { UserRoutingModule } from '../app/user/user-routing.module';
 import { UserModule } from './user/user.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UserModule } from './user/user.module';
     AppRoutingModule,
     CoreModule,
     UserRoutingModule,
-    UserModule
+    UserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [

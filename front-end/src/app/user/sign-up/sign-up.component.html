@@ -1,13 +1,12 @@
 <section class="sign-up-wrapper">
-    <form #f="ngForm" class="sign-up-form">
-        <article class="sign-up-body">
+    <form [formGroup]="form" class="sign-up-form" (ngSubmit)="submitHandler()">
+        <article class=" sign-up-body">
             <h1>Sign Up</h1>
-            <input #nameInput="ngModel" name="name" type="text" placeholder="Name" ngModel required>
-            <!-- <div *ngIf="nameInput.touched && nameInput.errors?.required">Name is required!</div> -->
-            <input #emailInput="ngModel" name="email" type="text" placeholder="E-mail" ngModel required email>
-            <input #passwordInput="ngModel" name="password" type="password" placeholder="Password" ngModel required>
-            <input #confirmPasswordInput="ngModel" name="confirmPassword" type="password" placeholder="Confirm Password"
-                ngModel required>
+            <input name="name" type="text" placeholder="Name" formControlName="name">
+            <input name="email" type="text" placeholder="E-mail" formControlName="email">
+            <input name="password" type="password" placeholder="Password" formControlName="password">
+            <input name="confirmPassword" type="password" placeholder="Confirm Password"
+                formControlName="confirmPassword">
             <button type="submit">Sign Up</button>
             <p>Already have an account? <a href="/login">Login</a></p>
         </article>

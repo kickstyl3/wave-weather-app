@@ -4,11 +4,13 @@ import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './auth.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HeaderComponent, NavigationComponent, FooterComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: [
     AuthService

@@ -1,9 +1,9 @@
 <section class="login-wrapper">
-    <form #f="ngForm" class="login-form">
+    <form [formGroup]="form" class="login-form" (ngSubmit)="submitHandler()">
         <article class="login-body">
             <h1>Login</h1>
-            <input name="email" type="text" placeholder="E-mail" ngModel required>
-            <input name="password" type="password" placeholder="Password" ngModel required>
+            <input name="email" type="text" placeholder="E-mail" formControlName="email">
+            <input name="password" type="password" placeholder="Password" formControlName="password">
             <button type="submit">Login</button>
             <p>Don't have an account? <a href="/signup">Sign up</a></p>
         </article>
