@@ -2,6 +2,7 @@ const User = require('../models/User');
 
 const utils = require('../utils');
 const config = require('../config/config');
+const authCookieName = process.env.authCookieName;
 
 module.exports = {
     get: async (req, res, next) => {
@@ -34,7 +35,7 @@ module.exports = {
                 const user = await User.findOne({ email }).lean();
                 const token = utils.jwt.createToken({ id: user._id });
 
-                res.header('Authorization', token).send(user);
+                res.cookie(authCookieName, token).send(user);
             } catch (e) {
                 console.error(e);
                 next();
@@ -55,16 +56,16 @@ module.exports = {
                 const user = await User.findOne({ email }).lean();
                 const token = utils.jwt.createToken({ id: user._id });
 
-                res.header('Authorization', token).send(user);
+                res.cookie(authCookieName, token).send(user);
             } catch (e) {
                 console.error(e);
-                next(); 
+                next();
             }
         },
 
         verifyLogin: (req, res, next) => {
             console.log(req.headers);
-            const token = req.headers.authorization || '';
+            const token = req.cookie.authCookieName || '';
 
             Promise.all([
                 utils.jwt.verifyToken(token)
@@ -95,7 +96,7 @@ module.exports = {
 
         logout: async (req, res, next) => {
             try {
-                res.clearCookie(config.authCookieName).send('Logout Successful!');
+                res.clearCookie(authCookieName).send('Logout Successful!');
             } catch (e) {
                 console.error(e);
                 next();
