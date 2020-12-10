@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { SourceMapGenerator } from '@angular/compiler/src/output/source_map';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
@@ -8,10 +9,11 @@ import { IUser } from '../shared/interfaces';
 @Injectable()
 export class AuthService {
 
+  currentUser: IUser | null;
+
   private _currentUser: BehaviorSubject<IUser | null> = new BehaviorSubject(undefined);
   currentUser$ = this._currentUser.asObservable();
   isLogged$ = this.currentUser$.pipe(map(user => !!user));
-  isReady$ = this.currentUser$.pipe(map(user => user !== undefined));
 
   constructor(private http: HttpClient) { }
 
@@ -30,13 +32,17 @@ export class AuthService {
 
   logout(): Observable<any> {
     return this.http.post(`/user/logout`, {}).pipe(
-      tap((user: IUser) => this._currentUser.next(null))
-    );
+      tap((user: IUser) => this._currentUser.next(null)),
+      catchError(() => {
+        this._currentUser.next(null);
+        return [null];
+      })
+    )
   }
 
   authenticate(): Observable<any> {
     return this.http.get(`/user/verify`).pipe(
-      tap((user: IUser) => this._currentUser.next(user)),
+      tap((user: IUser) => this._currentUser.next(undefined)),
       catchError(() => {
         this._currentUser.next(null);
         return [null];

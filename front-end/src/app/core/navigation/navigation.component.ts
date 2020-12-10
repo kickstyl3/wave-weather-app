@@ -10,7 +10,6 @@ import { AuthService } from '../auth.service';
 export class NavigationComponent implements OnInit {
 
   isLogged$ = this.authService.isLogged$;
-  isReady$ = this.authService.isReady$;
 
   constructor(
     private authService: AuthService,

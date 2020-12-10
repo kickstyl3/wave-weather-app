@@ -6,13 +6,17 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-    apiUrl = environment.apiURL;
+    apiUrl = environment.apiUrl;
+    baseUrl = environment.baseUrl;
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        req = req.clone({
-            url: `${this.apiUrl}${req.url}`,
-            withCredentials: true
-        });
+        const withoutApiUrl = req.url.includes('USE_BASE_URL');
+        if (withoutApiUrl) {
+            req = req.clone({ url: `${this.baseUrl}${req.url.replace('USE_BASE_URL/', '')}` });
+        }
+        if (!withoutApiUrl && !req.url.includes('http')) {
+            req = req.clone({ url: `${this.apiUrl}${req.url}`, withCredentials: true });
+        }
         return next.handle(req);
     }
 }

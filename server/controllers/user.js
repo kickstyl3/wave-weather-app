@@ -1,7 +1,6 @@
 const User = require('../models/User');
 
 const utils = require('../utils');
-const config = require('../config/config');
 const authCookieName = process.env.authCookieName;
 
 module.exports = {
