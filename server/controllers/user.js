@@ -60,33 +60,30 @@ module.exports = {
         },
 
         verifyLogin: (req, res, next) => {
-            const token = req.cookie.authCookieName || '';
+            const token = req.cookies[`${authCookieName}`] || null;
 
-            Promise.all([
-                utils.jwt.verifyToken(token)
-            ])
-                .then(([data]) => {
+            if (token !== null) {
+                Promise.all([
+                    utils.jwt.verifyToken(token)
+                ])
+                    .then(([data]) => {
 
-                    User.findById(data.id)
-                        .then((user) => {
-                            return res.send({
-                                status: true,
-                                user
-                            })
-                        });
-                })
-                .catch(err => {
-                    if (['token expired', 'jwt must be provided'].includes(err.message)) {
-                        res.status(401).send('UNAUTHORIZED!');
-                        return;
-                    }
-
-                    res.send({
-                        status: false
+                        User.findById(data.id)
+                            .then((user) => {
+                                return res.status(200).send({ user });
+                            });
                     })
-
-                    next();
-                })
+                    .catch(err => {
+                        if (['token expired', 'jwt must be provided'].includes(err.message)) {
+                            res.status(401).send('UNAUTHORIZED!');
+                            return;
+                        }
+                        next();
+                    })
+            } else {
+                res.status(401).send('Authorized');
+                next();
+            }
         },
 
         logout: async (req, res, next) => {

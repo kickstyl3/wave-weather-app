@@ -42,7 +42,7 @@ export class AuthService {
 
   authenticate(): Observable<any> {
     return this.http.get(`/user/verify`).pipe(
-      tap((user: IUser) => this._currentUser.next(undefined)),
+      tap((user: IUser) => this._currentUser.next(user)),
       catchError(() => {
         this._currentUser.next(null);
         return [null];
