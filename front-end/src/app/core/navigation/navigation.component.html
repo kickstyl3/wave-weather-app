@@ -5,16 +5,16 @@
                 <a href="/">Home</a>
             </li>
             <li *ngIf="!(isLogged$ | async)" class="login">
-                <a href="/login">Login</a>
+                <a href="/user/login">Login</a>
             </li>
             <li *ngIf="!(isLogged$ | async)" class="sign-up">
-                <a href="/signup">Sign Up</a>
+                <a href="/user/signup">Sign Up</a>
             </li>
             <li *ngIf="(isLogged$ | async)" class="my-cities">
-                <a href="/my-cities">My Cities</a>
+                <a href="/user/my-cities">My Cities</a>
             </li>
             <li *ngIf="(isLogged$ | async)" class="account">
-                <a href="/account">Account</a>
+                <a href="/user/account">Account</a>
             </li>
             <li *ngIf="(isLogged$ | async)" class="logout">
                 <a (click)="logoutHandler()">Logout</a>
