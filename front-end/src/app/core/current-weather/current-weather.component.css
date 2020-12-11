@@ -1,0 +1,65 @@
+.weather-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.current-weather {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.icon {
+    max-width: 8%;
+    width: 8%;
+}
+
+.temperature {
+    font-size: 62px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    color: white;
+}
+
+.city {
+    font-size: 43px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: white;
+}
+
+.description {
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.search-bar-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    margin-top: 20px;
+    width: 30%;
+    height: 45px;
+    border: 2px solid rgba(255, 255, 255, 0.74);
+    border-radius: 3px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.376);
+    padding-left: 60px;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.808);
+    background: url('../../../assets/img/search-icon-svg.svg') 3% no-repeat;
+}
+
+.search-bar:hover, .search-bar:focus {
+    border-color: rgba(255, 255, 255, 0.411);
+    transition: ease-in 0.2s;
+}
+
+.search-bar::placeholder {
+    color: rgba(63, 63, 63, 0.884);
+    font-size: 18px;
+}
