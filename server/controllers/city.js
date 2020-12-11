@@ -9,7 +9,7 @@ module.exports = {
     get: {
         currentWeather: async (req, res, next) => {
             try {
-                const currentCity = req.body.currentCity;
+                const currentCity = req.headers['current-city'];
 
                 if (currentCity !== undefined) {
                     request(currentWeather.getCurrentWeatherByCity(currentCity), function (error, response, body) {
