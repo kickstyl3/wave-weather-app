@@ -1,13 +1,46 @@
 <section class="sign-up-wrapper">
-    <form [formGroup]="form" class="sign-up-form" (ngSubmit)="submitHandler()">
+    <form #f="ngForm" class="sign-up-form" (ngSubmit)="submitHandler(f.value)">
         <article class=" sign-up-body">
             <h1>Sign Up</h1>
-            <input name="name" type="text" placeholder="Name" formControlName="name">
-            <input name="email" type="text" placeholder="E-mail" formControlName="email">
-            <input name="password" type="password" placeholder="Password" formControlName="password">
-            <input name="confirmPassword" type="password" placeholder="Confirm Password"
-                formControlName="confirmPassword">
-            <button type="submit">Sign Up</button>
+            <input #userName="ngModel" name="name" type="text" placeholder="Name" ngModel required minlength="3">
+
+            <p *ngIf="userName.touched && userName.errors?.required" class="error name-error">
+                Name is required
+            </p>
+            <p *ngIf="userName.touched && userName.errors?.minlength" class="error name-error">
+                Name must be at least 3 characters
+            </p>
+
+            <input #userEmail="ngModel" name="email" type="text" placeholder="E-mail" ngModel required email>
+
+            <p *ngIf="userEmail.touched && userEmail.errors?.required" class="error email-error">
+                Email is required
+            </p>
+            <p *ngIf="userEmail.touched && userEmail.errors?.email" class="error email-error">
+                Invalid Email
+            </p>
+
+            <input #userPassword="ngModel" name="password" type="password" placeholder="Password" ngModel required minlength="6">
+
+            <p *ngIf="userPassword.touched && userPassword.errors?.required" class="error password-error">
+                Password is required
+            </p>
+            <p *ngIf="userPassword.touched && userPassword.errors?.minlength" class="error password-error">
+                Password must be at least 6 characters
+            </p>
+
+            <input #userConfirmPassword="ngModel" name="confirmPassword" type="password" placeholder="Confirm Password" ngModel
+                required>
+
+                <p *ngIf="userConfirmPassword.touched && userConfirmPassword.errors?.required" class="error confirm-password-error">
+                    You must confirm your password
+                </p>
+
+                <!-- <p *ngIf="userConfirmPassword.touched && userConfirmPassword !== userPassword" class="error confirm-password-error">
+                    Passwords do not match
+                </p> -->
+
+            <button>Sign Up</button>
             <p>Already have an account? <a href="/user/login">Login</a></p>
         </article>
     </form>
