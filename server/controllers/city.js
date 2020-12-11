@@ -1,31 +1,21 @@
 const request = require('request');
-const apiKey = process.env.weatherApiKey;
-
-const key = `&appid=${apiKey}`;
-
-const getCurrentWeatherByCity = `http://api.openweathermap.org/data/2.5/weather?q=`;
-const getCurrentWeatherByLocation = `http://api.openweathermap.org/data/2.5/weather?q=`;
 
 const City = require('../models/City');
 const User = require('../models/User');
+
+const currentWeather = require('../utils/currentWeather');
 
 module.exports = {
     get: {
         currentWeather: async (req, res, next) => {
             try {
                 const currentCity = req.body.currentCity;
-                // const currentLocation = req.body.location;
 
                 if (currentCity !== undefined) {
-                    request(getCurrentWeatherByCity + currentCity + key, function (error, response, body) {
+                    request(currentWeather.getCurrentWeatherByCity(currentCity), function (error, response, body) {
                         res.status(200).send(JSON.parse(body));
                     })
                 }
-                //  else if (currentLocation !== undefined) {
-                //     request(getCurrentWeatherByLocation + location + key, function (error, response, body) {
-                //         res.status(200).send(JSON.parse(body));
-                //     })
-                // }
             } catch (e) {
                 console.error(e);
                 next();
