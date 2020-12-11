@@ -1,5 +1,5 @@
 import { Injectable, Provider } from '@angular/core';
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
@@ -15,7 +15,7 @@ export class AuthInterceptor implements HttpInterceptor {
             req = req.clone({ url: `${this.baseUrl}${req.url.replace('USE_BASE_URL/', '')}` });
         }
         if (!withoutApiUrl && !req.url.includes('http')) {
-            req = req.clone({ url: `${this.apiUrl}${req.url}`, withCredentials: true });
+            req = req.clone({ url: `${this.apiUrl}${req.url}`, withCredentials: true, headers: new HttpHeaders({'Current-City': 'Paphos'}) });
         }
         return next.handle(req);
     }

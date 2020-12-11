@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { UserRoutingModule } from '../app/user/user-routing.module';
 import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherService } from './core/weather.service';
 
 @NgModule({
   declarations: [
