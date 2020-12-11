@@ -1,10 +1,23 @@
 <section class="login-wrapper">
-    <form [formGroup]="form" class="login-form" (ngSubmit)="submitHandler()">
+    <form #f="ngForm" class="login-form" (ngSubmit)="submitHandler(f.value)">
         <article class="login-body">
             <h1>Login</h1>
-            <input name="email" type="text" placeholder="E-mail" formControlName="email">
-            <input name="password" type="password" placeholder="Password" formControlName="password">
-            <button type="submit">Login</button>
+            <input #userEmail="ngModel" name="email" type="text" placeholder="Email" ngModel required email>
+
+            <p *ngIf="userEmail.touched && userEmail.errors?.required" class="error email-error">
+                Email is required
+            </p>
+
+            <p *ngIf="userEmail.touched && userEmail.errors?.email" class="error email-error">
+                Invalid Email
+            </p>
+            <input #userPassword="ngModel" name="password" type="password" placeholder="Password" ngModel required>
+
+            <p *ngIf="userPassword.touched && userPassword.errors?.required" class="error password-error">
+                Password is required
+            </p>
+
+            <button>Login</button>
             <p>Don't have an account? <a href="/user/signup">Sign up</a></p>
         </article>
     </form>

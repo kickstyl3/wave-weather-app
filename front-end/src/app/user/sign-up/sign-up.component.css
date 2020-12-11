@@ -103,3 +103,16 @@ a {
     color: white;
     text-decoration: none;
 }
+
+.error {
+    font-size: 16px;
+    color: rgb(207, 5, 5);
+}
+
+.name-error, .email-error, .password-error {
+    margin: -5px auto;
+}
+
+.confirm-password-error {
+    margin: -5px 0px 10px 0px;
+}
