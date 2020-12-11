@@ -7,9 +7,15 @@ import { AuthService } from './auth.service';
 import { RouterModule } from '@angular/router';
 import { authInterceptorProvider } from './auth.interceptor';
 import { AuthGuard } from './guards/auth.guard';
+import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 
 @NgModule({
-  declarations: [HeaderComponent, NavigationComponent, FooterComponent],
+  declarations: [
+    HeaderComponent,
+    NavigationComponent,
+    FooterComponent,
+    CurrentWeatherComponent
+  ],
   imports: [
     CommonModule,
     RouterModule
@@ -21,7 +27,8 @@ import { AuthGuard } from './guards/auth.guard';
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CurrentWeatherComponent
   ]
 })
 export class CoreModule { }
