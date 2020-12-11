@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { SourceMapGenerator } from '@angular/compiler/src/output/source_map';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
@@ -7,7 +6,7 @@ import { catchError, tap, map } from 'rxjs/operators';
 import { IUser } from '../shared/interfaces';
 
 @Injectable()
-export class AuthService {
+export class  AuthService {
 
   currentUser: IUser | null;
 

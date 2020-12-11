@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { authInterceptorProvider } from './auth.interceptor';
 import { AuthGuard } from './guards/auth.guard';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
+import { WeatherService } from './weather.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CurrentWeatherComponent } from './current-weather/current-weather.compo
   providers: [
     AuthService,
     authInterceptorProvider,
-    AuthGuard
+    AuthGuard,
+    WeatherService
   ],
   exports: [
     HeaderComponent,
