@@ -11,7 +11,46 @@ import { HomeComponent } from './home/home.component';
 import { UserRoutingModule } from '../app/user/user-routing.module';
 import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
-import { WeatherService } from './core/weather.service';
+import {
+  NgxUiLoaderModule,
+  NgxUiLoaderHttpModule,
+  NgxUiLoaderRouterModule,
+  NgxUiLoaderConfig,
+  SPINNER,
+  POSITION,
+  PB_DIRECTION,
+} from "ngx-ui-loader";
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  "bgsColor": "#0aa5d0",
+  "bgsOpacity": 0.8,
+  "bgsPosition": "bottom-right",
+  "bgsSize": 50,
+  "bgsType": "square-jelly-box",
+  "blur": 10,
+  "delay": 0,
+  "fastFadeOut": true,
+  "fgsColor": "#0aa5d0",
+  "fgsPosition": "center-center",
+  "fgsSize": 60,
+  "fgsType": "square-jelly-box",
+  "gap": 24,
+  "logoPosition": "center-center",
+  "logoSize": 120,
+  "logoUrl": "",
+  "masterLoaderId": "master",
+  "overlayBorderRadius": "0",
+  "overlayColor": "rgba(40, 40, 40, 0.8)",
+  "pbColor": "#0aa5d0",
+  "pbDirection": "ltr",
+  "pbThickness": 3,
+  "hasProgressBar": true,
+  "text": "Loading...",
+  "textColor": "#FFFFFF",
+  "textPosition": "center-center",
+  "maxTime": -1,
+  "minTime": 300
+};
 
 @NgModule({
   declarations: [
@@ -24,7 +63,11 @@ import { WeatherService } from './core/weather.service';
     CoreModule,
     UserRoutingModule,
     UserModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule,
+    NgxUiLoaderRouterModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig)
   ],
   providers: [],
   bootstrap: [
