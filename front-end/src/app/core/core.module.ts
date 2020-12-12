@@ -9,6 +9,7 @@ import { authInterceptorProvider } from './auth.interceptor';
 import { AuthGuard } from './guards/auth.guard';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 import { WeatherService } from './weather.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WeatherService } from './weather.service';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [
     AuthService,

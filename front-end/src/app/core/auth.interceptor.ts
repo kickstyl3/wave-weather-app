@@ -2,6 +2,7 @@ import { Injectable, Provider } from '@angular/core';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { } from './weather.service';
 import { environment } from '../../environments/environment';
 
 @Injectable()
@@ -15,7 +16,7 @@ export class AuthInterceptor implements HttpInterceptor {
             req = req.clone({ url: `${this.baseUrl}${req.url.replace('USE_BASE_URL/', '')}` });
         }
         if (!withoutApiUrl && !req.url.includes('http')) {
-            req = req.clone({ url: `${this.apiUrl}${req.url}`, withCredentials: true, headers: new HttpHeaders({'Current-City': 'Paphos'}) });
+            req = req.clone({ url: `${this.apiUrl}${req.url}`, withCredentials: true });
         }
         return next.handle(req);
     }

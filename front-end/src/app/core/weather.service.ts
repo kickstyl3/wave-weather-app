@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable()
 export class WeatherService {
@@ -9,8 +9,13 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   getCurrentWeather(data: any): Observable<any> {
-    return this.http.get('/city/current-weather').pipe(
-      tap((city) => console.log(city))
+    const cityHeader = new HttpHeaders({ 'Current-City': data });
+
+    return this.http.get('/city/current-weather', { headers: cityHeader }).pipe(
+      tap((city) => console.log(city)),
+      catchError(() => {
+        return [null];
+      })
     )
   }
 }
