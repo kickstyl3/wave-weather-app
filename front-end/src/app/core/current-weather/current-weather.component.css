@@ -39,29 +39,58 @@
     margin-top: 15px;
 }
 
-.search-bar {
-    width: 20%;
-    height: 35px;
+form {
+    display: flex;
+}
+
+.search-bar, .search-btn, .location-btn {
     border: 2px solid rgba(255, 255, 255, 0.575);
     outline: none;
+}
+
+.search-bar {
+    width: 300px;
+    height: 40px;
     border-left: 0;
     background-color: rgba(255, 255, 255, 0.192);
     padding-left: 5px;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.808);
+    border-right: 0;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.63);
 }
 
 .search-bar::placeholder {
     color: rgba(63, 63, 63, 0.685);
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .search-btn {
     padding: 0 10px;
-    background-color: rgba(255, 255, 255, 0.192);
+    background-color: rgba(23, 92, 156, 0.555);
     color: rgba(255, 255, 255, 0.842);
-    border: 2px solid rgba(255, 255, 255, 0.74);
-    outline: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
+}
+
+.search-btn:hover {
+    background-color: rgb(3, 73, 139);
+    color: rgb(255, 255, 255);
+    transition: ease-in 0.2s;
+    border-color: rgba(23, 92, 156, 0.555);
+    font-size: 17px;
+}
+
+.location-btn {
+    color: rgb(14, 74, 212);
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.192);
+    cursor: pointer;
+    border-left: 0;
+    font-size: 18px;
+}
+
+.location-btn:hover {
+    color: rgb(2, 43, 109); 
+    transition: ease-in 0.2s;
 }
