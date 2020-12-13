@@ -2,8 +2,12 @@ const request = require('request');
 
 const City = require('../models/City');
 const User = require('../models/User');
-
 const weather = require('../utils/weather');
+
+//GeoCoding API
+const geocodingApiKey = process.env.geocodingApiKey;
+const geocodingApiUrl = `https://api.geoapify.com/v1/geocode/search?text=`;
+const geocodingApiKeyUrl = `&apiKey=${geocodingApiKey}`;
 
 module.exports = {
     get: {
@@ -38,12 +42,23 @@ module.exports = {
         dailyWeather: async (req, res, next) => {
             try {
                 const currentCity = req.headers['current-city'];
-                
+
+                let lon = '';
+                let lat = '';
+
+                const url = geocodingApiUrl + currentCity + geocodingApiKeyUrl;
+
                 if (currentCity !== undefined) {
-                    //TO DO: IMPLEMENT GEOCODING API REQUEST
-                    request(weather.getDailyWeather(currentCity), function (error, response, body) {
-                        res.status(200).send(JSON.parse(body));
+                    request(geocodingApiUrl + currentCity + geocodingApiKeyUrl, function (error, response, body) {
+                        lon = JSON.parse(body).features[0].properties.lon;
+                        lat = JSON.parse(body).features[0].properties.lat;
                     })
+
+                    setTimeout(() => {
+                        request(weather.getDailyWeather(lon, lat), function (error, response, body) {
+                            res.status(200).send(JSON.parse(body));
+                        })
+                    }, 1000)
                 }
             } catch (e) {
                 console.error(e);
