@@ -35,6 +35,21 @@ module.exports = {
                 next();
             }
         },
+        dailyWeather: async (req, res, next) => {
+            try {
+                const currentCity = req.headers['current-city'];
+                
+                if (currentCity !== undefined) {
+                    //TO DO: IMPLEMENT GEOCODING API REQUEST
+                    request(weather.getDailyWeather(currentCity), function (error, response, body) {
+                        res.status(200).send(JSON.parse(body));
+                    })
+                }
+            } catch (e) {
+                console.error(e);
+                next();
+            }
+        },
         myCities: async (req, res, next) => {
             try {
                 const _id = req.headers.user;
