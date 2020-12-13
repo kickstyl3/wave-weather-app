@@ -10,13 +10,15 @@ import { AuthGuard } from './guards/auth.guard';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 import { WeatherService } from './weather.service';
 import { FormsModule } from '@angular/forms';
+import { HourlyWeatherComponent } from './hourly-weather/hourly-weather.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     NavigationComponent,
     FooterComponent,
-    CurrentWeatherComponent
+    CurrentWeatherComponent,
+    HourlyWeatherComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { FormsModule } from '@angular/forms';
   exports: [
     HeaderComponent,
     FooterComponent,
-    CurrentWeatherComponent
+    CurrentWeatherComponent,
+    HourlyWeatherComponent
   ]
 })
 export class CoreModule { }
