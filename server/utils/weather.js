@@ -1,7 +1,7 @@
 const weatherApiKey = process.env.weatherApiKey;
 
 const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=`;
-const dailyWeatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=34.773856&lon=32.427452`;
+const dailyWeatherUrl = `https://api.openweathermap.org/data/2.5/onecall?`;
 const hourlyWeatherUrl = `http://api.openweathermap.org/data/2.5/forecast?q=`;
 
 const currentWeatherApiUrl = `&appid=${weatherApiKey}`;
@@ -17,14 +17,14 @@ function getWeatherByCity(city) {
     return cityUrl;
 }
 
-function getDailyWeather(city) {
-    const cityUrl = dailyWeatherUrl + city + dailyWeatherApiUrl;
+function getDailyWeather(lon, lat) {
+    const cityUrl = dailyWeatherUrl + `lat=${lat}&lon=${lon}` + currentWeatherApiUrl + dailyWeatherApiOptions + units;
 
-    return cityUrl
+    return cityUrl;
 }
 
 function getHourlyWeather(city) {
-    const cityUrl = hourlyWeatherUrl + city + currentWeatherApiKey + units + hours;
+    const cityUrl = hourlyWeatherUrl + city + currentWeatherApiUrl + units + hours;
 
     return cityUrl;
 }
