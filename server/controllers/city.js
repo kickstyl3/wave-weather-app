@@ -46,8 +46,6 @@ module.exports = {
                 let lon = '';
                 let lat = '';
 
-                const url = geocodingApiUrl + currentCity + geocodingApiKeyUrl;
-
                 if (currentCity !== undefined) {
                     request(geocodingApiUrl + currentCity + geocodingApiKeyUrl, function (error, response, body) {
                         lon = JSON.parse(body).features[0].properties.lon;
