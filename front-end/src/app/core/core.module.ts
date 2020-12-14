@@ -11,6 +11,7 @@ import { CurrentWeatherComponent } from './current-weather/current-weather.compo
 import { WeatherService } from './weather.service';
 import { FormsModule } from '@angular/forms';
 import { HourlyWeatherComponent } from './hourly-weather/hourly-weather.component';
+import { DailyWeatherComponent } from './daily-weather/daily-weather.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HourlyWeatherComponent } from './hourly-weather/hourly-weather.componen
     NavigationComponent,
     FooterComponent,
     CurrentWeatherComponent,
-    HourlyWeatherComponent
+    HourlyWeatherComponent,
+    DailyWeatherComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { HourlyWeatherComponent } from './hourly-weather/hourly-weather.componen
     HeaderComponent,
     FooterComponent,
     CurrentWeatherComponent,
-    HourlyWeatherComponent
+    HourlyWeatherComponent,
+    DailyWeatherComponent 
   ]
 })
 export class CoreModule { }

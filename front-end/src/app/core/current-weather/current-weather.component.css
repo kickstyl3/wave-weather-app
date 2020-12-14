@@ -1,3 +1,8 @@
+:host {
+    display: flex;
+    justify-content: space-around;
+}
+
 .weather-wrapper {
     display: flex;
     flex-direction: column;
@@ -5,7 +10,6 @@
 
 .current-weather {
     display: flex;
-    align-items: center;
     flex-direction: column;
     margin-top: 20px;
 }
@@ -35,7 +39,6 @@
 
 .search-bar-wrapper {
     display: flex;
-    justify-content: center;
     margin-top: 15px;
 }
 
@@ -91,6 +94,6 @@ form {
 }
 
 .location-btn:hover {
-    color: rgb(2, 43, 109); 
+    color: rgb(2, 43, 109);
     transition: ease-in 0.2s;
 }

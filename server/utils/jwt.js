@@ -8,11 +8,9 @@ async function verifyToken(token) {
     try {
         const verifiedToken = await jwt.verify(token, process.env.secretKey);
 
-        console.log('You are logged in.')
-
         return verifiedToken;
     } catch (e) {
-        console.log('You are currently viewing this website as a guest.')
+        console.error(e);
     }
 }
 
