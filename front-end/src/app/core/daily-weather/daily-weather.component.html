@@ -1,0 +1,11 @@
+<article *ngFor="let day of dailyData" class="daily-weather">
+    <img class="icon" src="../../../assets/img/weather-conditions/sun.svg" alt="">
+    <p class="temperature">{{day.temp.day}}</p>
+    <p class="description">{{day.weather.main}}</p>
+    <img class="wind-speed-icon" src="" alt="">
+    <p class="wind-speed">{{day['wind_speed']}}</p>
+    <img class="humidity-icon" src="" alt="">
+    <p class="humidity">{{day.humidity}}</p>
+    <img class="clouds-icon" src="" alt="">
+    <p class="clouds">{{day.clouds}}</p>
+</article>

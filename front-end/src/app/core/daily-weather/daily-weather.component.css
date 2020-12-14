@@ -1,0 +1,11 @@
+:host {
+    display: flex;
+}
+
+.daily-weather {
+    background-color: rgba(0, 0, 0, 0.438);
+}
+
+.icon {
+    width: 5%;
+}
