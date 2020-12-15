@@ -12,4 +12,9 @@
             <button class="location-btn"><i class="fas fa-location-arrow"></i></button>
         </form>
     </article>
+    <article class="weather-options">
+        <button class="details-btn">Details</button>
+        <button [routerLink]="['/weather/daily']" class="daily-btn">Daily</button>
+        <button [routerLink]="['/weather/hourly']" class="hourly-btn">Hourly</button>
+    </article>
 </section>

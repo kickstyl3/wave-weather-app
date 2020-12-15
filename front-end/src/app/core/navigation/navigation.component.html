@@ -2,19 +2,19 @@
     <article>
         <ul>
             <li class="home">
-                <a href="/">Home</a>
+                <a [routerLink]="['']">Home</a>
             </li>
             <li *ngIf="!(isLogged$ | async)" class="login">
-                <a href="/user/login">Login</a>
+                <a [routerLink]="['/user/login']">Login</a>
             </li>
             <li *ngIf="!(isLogged$ | async)" class="sign-up">
-                <a href="/user/signup">Sign Up</a>
+                <a [routerLink]="['/user/signup']">Sign Up</a>
             </li>
             <li *ngIf="(isLogged$ | async)" class="my-cities">
-                <a href="/user/my-cities">My Cities</a>
+                <a [routerLink]="['/user/my-cities']">My Cities</a>
             </li>
             <li *ngIf="(isLogged$ | async)" class="account">
-                <a href="/user/account">Account</a>
+                <a [routerLink]="['/user/account']">Account</a>
             </li>
             <li *ngIf="(isLogged$ | async)" class="logout">
                 <a (click)="logoutHandler()">Logout</a>
