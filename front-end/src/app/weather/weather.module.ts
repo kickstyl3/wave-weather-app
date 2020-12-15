@@ -7,6 +7,7 @@ import { WeatherService } from './weather.service';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
+import { WeatherRoutingModule } from './weather.routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     CoreModule,
-    RouterModule
+    RouterModule,
+    WeatherRoutingModule
   ],
   providers: [
     WeatherService
