@@ -13,9 +13,6 @@
             <li *ngIf="(isLogged$ | async)" class="my-cities">
                 <a [routerLink]="['/user/my-cities']">My Cities</a>
             </li>
-            <li *ngIf="(isLogged$ | async)" class="account">
-                <a [routerLink]="['/user/account']">Account</a>
-            </li>
             <li *ngIf="(isLogged$ | async)" class="logout">
                 <a (click)="logoutHandler()">Logout</a>
             </li>
