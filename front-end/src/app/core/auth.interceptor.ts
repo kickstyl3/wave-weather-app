@@ -2,7 +2,7 @@ import { Injectable, Provider } from '@angular/core';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { } from './weather.service';
+import { } from '../weather/weather.service';
 import { environment } from '../../environments/environment';
 
 @Injectable()
