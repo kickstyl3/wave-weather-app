@@ -24,6 +24,7 @@ export class WeatherService {
   getDailyWeather(): Observable<any> {
     const data = this.dailyWeatherCity$;
     const cityHeader = new HttpHeaders({ 'Current-City': data });
+    console.log('data', data);
 
     return this.http.get('/city/daily-weather', { headers: cityHeader }).pipe(
       tap((city) => console.log('daily', city)),
