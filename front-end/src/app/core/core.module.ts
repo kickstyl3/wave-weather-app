@@ -7,38 +7,25 @@ import { AuthService } from './auth.service';
 import { RouterModule } from '@angular/router';
 import { authInterceptorProvider } from './auth.interceptor';
 import { AuthGuard } from './guards/auth.guard';
-import { CurrentWeatherComponent } from './current-weather/current-weather.component';
-import { WeatherService } from './weather.service';
-import { FormsModule } from '@angular/forms';
-import { HourlyWeatherComponent } from './hourly-weather/hourly-weather.component';
-import { DailyWeatherComponent } from './daily-weather/daily-weather.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     NavigationComponent,
-    FooterComponent,
-    CurrentWeatherComponent,
-    HourlyWeatherComponent,
-    DailyWeatherComponent
+    FooterComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    FormsModule
+    RouterModule
   ],
   providers: [
     AuthService,
     authInterceptorProvider,
-    AuthGuard,
-    WeatherService
+    AuthGuard
   ],
   exports: [
     HeaderComponent,
-    FooterComponent,
-    CurrentWeatherComponent,
-    HourlyWeatherComponent,
-    DailyWeatherComponent 
+    FooterComponent
   ]
 })
 export class CoreModule { }

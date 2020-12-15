@@ -6,7 +6,7 @@
         <p class="description">{{description}}</p>
     </article>
     <article class="search-bar-wrapper">
-        <form #f="ngForm" (ngSubmit)="searchHandler(f.value)">
+        <form #f="ngForm" (ngSubmit)="searchHandler(f.value); f.reset()">
             <button class="search-btn"><i class="fas fa-search"></i></button>
             <input name="searchedCity" class="search-bar" type="text" placeholder="Search by City..." ngModel>
             <button class="location-btn"><i class="fas fa-location-arrow"></i></button>

@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { UserRoutingModule } from '../app/user/user-routing.module';
 import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
+import { WeatherModule } from './weather/weather.module';
 import {
   NgxUiLoaderModule,
   NgxUiLoaderHttpModule,
@@ -63,6 +64,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CoreModule,
     UserRoutingModule,
     UserModule,
+    WeatherModule,
     HttpClientModule,
     NgxUiLoaderModule,
     NgxUiLoaderHttpModule,
