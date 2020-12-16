@@ -14,21 +14,21 @@ const routes: Routes = [
                 path: 'details',
                 component: DetailsComponent,
                 data: {
-                    isLogged: true
+                    // isLogged: true
                 }
             },
             {
                 path: 'daily',
                 component: DailyWeatherComponent,
                 data: {
-                    isLogged: true
+                    // isLogged: true
                 }
             },
             {
                 path: 'hourly',
                 component: HourlyWeatherComponent,
                 data: {
-                    isLogged: true
+                    // isLogged: true
                 }
             }
         ]

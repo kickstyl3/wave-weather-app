@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 import { WeatherService } from '../weather.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class DetailsComponent implements OnInit {
   visibility: number;
 
   constructor(
+    private router: Router,
     private weatherService: WeatherService
   ) { }
 
@@ -37,24 +39,15 @@ export class DetailsComponent implements OnInit {
           this.wind = data.wind.speed;
           this.pressure = data.main.pressure;
           this.visibility = data.visibility;
-          const details = {
-            sunrise: this.sunrise,
-            sunset: this.sunset,
-            feelsLike: this.feelsLike,
-            minTemp: this.minTemp,
-            maxTemp: this.maxTemp,
-            humidity: this.humidity,
-            clouds: this.clouds,
-            wind: this.wind,
-            pressure: this.pressure,
-            visibility: this.visibility
-          };
-          console.log('details', details);
         },
         error: (err) => {
           console.error(err);
         }
       })
+  }
+
+  goBack() {
+    this.router.navigate(['/']);
   }
 
 }
