@@ -24,8 +24,7 @@ export class CurrentWeatherComponent implements OnInit {
       .getCurrentWeather(this.cityName)
       .subscribe({
         next: (data) => {
-          const { main, name, sys, visibility, weather, wind } = data;
-          // console.log(main, name, sys, visibility, weather, wind);
+          const { main, weather } = data;
           const [description] = weather;
           const { main: desc } = description;
           this.description = desc;
