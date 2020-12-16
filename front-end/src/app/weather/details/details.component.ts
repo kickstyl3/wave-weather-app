@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { WeatherService } from '../weather.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-details',
@@ -8,8 +9,8 @@ import { WeatherService } from '../weather.service';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  sunrise: number;
-  sunset: number;
+  sunrise;
+  sunset;
   feelsLike: number;
   minTemp: number;
   maxTemp: number;
@@ -29,11 +30,18 @@ export class DetailsComponent implements OnInit {
       .getWeatherDetails()
       .subscribe({
         next: (data) => {
-          this.sunrise = data.sys.sunrise;
-          this.sunset = data.sys.sunset;
-          this.feelsLike = data.main['feels_like'];
-          this.minTemp = data.main['temp_min'];
-          this.maxTemp = data.main['temp_max'];
+          const sunriseUnix = data.sys.sunrise;
+          const sunsetUnix = data.sys.sunset;
+
+          const sunriseTime = moment.unix(sunriseUnix).format("HH:mm");
+          const sunsetTime = moment.unix(sunsetUnix).format("HH:mm");
+
+          this.sunrise = sunriseTime;
+          this.sunset = sunsetTime;
+
+          this.feelsLike = data.main['feels_like'].toFixed(0);
+          this.minTemp = data.main['temp_min'].toFixed(0);
+          this.maxTemp = data.main['temp_max'].toFixed(0);
           this.humidity = data.main.humidity;
           this.clouds = data.clouds.all;
           this.wind = data.wind.speed;
