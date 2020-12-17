@@ -1,0 +1,59 @@
+.daily-weather-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.daily-weather {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 30px;
+    background: linear-gradient(180deg, rgba(0,61,96,1) 0%, rgba(51,21,102,1) 44%, rgba(40,16,80,1) 72%, rgba(0,0,0,1) 92%);
+    margin: 0px 20px;
+    border-radius: 5px;
+    width: 270px;
+    max-width: 270px;
+    min-width: 270px;
+}
+
+.day {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.609);
+}
+
+.icon {
+    max-width: 80%;
+}
+
+.temperature {
+    font-size: 30px;
+    color: white;
+}
+
+.description {
+    font-size: 16px;
+    color: white;
+}
+
+.weather-icons {
+    display: flex;
+    flex-direction: row;
+    padding-top: 15px;
+}
+
+.wind-wrapper, .humidity-wrapper, .clouds-wrapper {
+    justify-content: space-around;
+    padding: 10px;
+    color: white;
+}
+
+div>article {
+    text-align: center;
+}
+
+div > article > p {
+    font-size: 14px;
+}
