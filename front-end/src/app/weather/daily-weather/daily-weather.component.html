@@ -1,11 +1,22 @@
-<article *ngFor="let day of dailyData" class="daily-weather">
-    <img class="icon" src="../../../assets/img/weather-conditions/sun.svg" alt="">
-    <p class="temperature">{{day.temp.day}}</p>
-    <p class="description">{{day.weather.main}}</p>
-    <img class="wind-speed-icon" src="" alt="">
-    <p class="wind-speed">{{day['wind_speed']}}</p>
-    <img class="humidity-icon" src="" alt="">
-    <p class="humidity">{{day.humidity}}</p>
-    <img class="clouds-icon" src="" alt="">
-    <p class="clouds">{{day.clouds}}</p>
-</article>
+<section class="daily-weather-wrapper">
+    <article *ngFor="let day of dailyData" class="daily-weather">
+        <p class="day">{{formatDay(day.dt)}}</p>
+        <img class="icon" src="../../../assets/img/weather-conditions/sun.svg" alt="">
+        <p class="temperature">{{day.temp.day.toFixed(0)}}&#176;</p>
+        <p class="description">{{day.weather[0].main}}</p>
+        <div class="weather-icons">
+            <article class="wind-wrapper"> 
+                <img class="wind-speed-icon" src="../../../assets//img/daily-weather-icons/wind.svg" alt="">
+                <p class="wind-speed">{{day['wind_speed'].toFixed(0)}} m/s</p>
+            </article>
+            <article class="humidity-wrapper">
+                <img class="humidity-icon" src="../../../assets//img/daily-weather-icons/humidity.svg" alt="">
+                <p class="humidity">{{day.humidity}}%</p>
+            </article>
+            <article class="clouds-wrapper">
+                <img class="clouds-icon" src="../../../assets//img/daily-weather-icons/clouds.svg" alt="">
+                <p class="clouds">{{day.clouds}}%</p>
+            </article>
+        </div>
+    </article>
+</section>
