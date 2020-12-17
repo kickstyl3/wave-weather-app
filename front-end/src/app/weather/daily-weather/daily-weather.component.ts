@@ -21,8 +21,7 @@ export class DailyWeatherComponent implements OnInit {
         .subscribe({
           next: (data) => {
             data.daily.shift();
-            const splicedData = data.daily.splice(6, 8);
-            data.daily.shift();
+            const splicedData = data.daily.splice(5, 8);
 
             this.dailyData = data.daily;
             console.log(this.dailyData);
