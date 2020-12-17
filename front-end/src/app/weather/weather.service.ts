@@ -44,4 +44,16 @@ export class WeatherService {
       })
     )
   }
+
+  getHourlyWeather(): Observable<any> {
+    const data = this.dailyWeatherCity$;
+    const cityHeader = new HttpHeaders({ 'Current-City': data });
+
+    return this.http.get('/city/hourly-weather', { headers: cityHeader }).pipe(
+      tap((city) => console.log(city)),
+      catchError(() => {
+        return [null];
+      })
+    )
+  }
 }
