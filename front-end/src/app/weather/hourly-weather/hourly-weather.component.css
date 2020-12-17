@@ -1,0 +1,29 @@
+.hourly-weather-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+}
+
+.hourly-weather {
+    display: flex;
+    text-align: center;
+    flex-basis: 55%;
+    align-items: center;
+}
+
+.hourly-weather-card {
+    padding: 20px 0px;
+    border: 1px solid rgba(255, 255, 255, 0.267);
+    background-color: rgba(0, 0, 0, 0.473);
+}
+
+.icon {
+    max-width: 40%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.hourly-weather-card>p {
+    color: white;
+    font-size: 20px;
+}
