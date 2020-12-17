@@ -122,7 +122,7 @@ form {
     padding: 15px 50px;
     font-size: 20px;
     text-transform: uppercase;
-    margin-top: 150px;
+    margin-top: 80px;
     width: 450px;
     color: white;
     background-color: rgba(0, 0, 0, 0.562);
@@ -154,7 +154,7 @@ form {
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.521);
 }
 
-.weather-options > button:hover {
+.weather-options>button:hover {
     background-color: rgba(0, 0, 0, 0.541);
     cursor: pointer;
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.521);
@@ -167,4 +167,35 @@ form {
 
 .hourly-btn {
     margin-left: 5px;
+}
+
+.follow-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.follow-btn {
+    margin-top: 50px;
+    padding: 15px 30px 15px 90px;
+    color: rgba(255, 255, 255, 0.712);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.438);
+    border-radius: 5px;
+    outline: none;
+    background: url(../../../assets/img/heart-svg.svg) no-repeat 25px 50%, linear-gradient(180deg, rgba(30, 9, 157, 1) 0%, rgba(117, 22, 212, 1) 66%);
+    background-size: 40px;
+    box-shadow: 0px 5px 5px -2px #410090d5;
+    transition: ease-in 0.3s;
+}
+
+.follow-btn:hover {
+    cursor: pointer;
+    background: url(../../../assets/img/heart-svg.svg) no-repeat 25px 50%, linear-gradient(180deg, rgba(30, 9, 157, 1) 100%, rgba(117, 22, 212, 1) 0%);
+    background-size: 45px;
+    font-size: 25px;
+    transition: ease-out 0.5s;
 }
