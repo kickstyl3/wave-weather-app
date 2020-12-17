@@ -77,5 +77,11 @@ export class CurrentWeatherComponent implements OnInit {
         })
     }
   }
+
+  followCity() {
+    const city = this.city;
+
+    
+  }
 }
 
