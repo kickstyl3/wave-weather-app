@@ -41,6 +41,11 @@ export class CurrentWeatherComponent implements OnInit {
       })
   }
 
+  followCity() {
+    const city = this.city;
+
+
+  }
 
   searchHandler(formValue: { searchedCity: string }) {
     this.cityName = formValue.searchedCity;
@@ -50,7 +55,6 @@ export class CurrentWeatherComponent implements OnInit {
         .subscribe({
           next: (data) => {
             const { main, name, sys, visibility, weather, wind } = data;
-            // console.log(main, name, sys, visibility, weather, wind);
             const [description] = weather;
             const { main: desc } = description;
             this.description = desc;
@@ -85,12 +89,6 @@ export class CurrentWeatherComponent implements OnInit {
           }
         })
     }
-  }
-
-  followCity() {
-    const city = this.city;
-
-
   }
 
   weatherConditionHandler(description) {
