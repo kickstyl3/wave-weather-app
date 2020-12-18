@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import * as moment from 'moment';
+import { UtilityService } from 'src/app/shared/utility.service';
 
 @Component({
   selector: 'app-hourly-weather',
@@ -11,6 +12,7 @@ export class HourlyWeatherComponent implements OnInit {
   hourList;
 
   constructor(
+    private utilityService: UtilityService,
     private weatherService: WeatherService
   ) { }
 
@@ -25,6 +27,12 @@ export class HourlyWeatherComponent implements OnInit {
         console.log(this.hourList);
       }
     })
+  }
+
+  weatherConditionHandler(description) {
+    const iconUrl = this.utilityService.weatherConditionHandler(description);
+
+    return iconUrl;
   }
 
   formatHour(unixTime) {

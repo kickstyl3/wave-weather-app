@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../weather.service';
-import * as moment from 'moment';
+import { UtilityService } from '../../shared/utility.service';
 
 @Component({
   selector: 'app-current-weather',
@@ -15,6 +15,7 @@ export class CurrentWeatherComponent implements OnInit {
   weatherConditionIconUrl: string;
 
   constructor(
+    private utilityService: UtilityService,
     private weatherService: WeatherService
   ) {
   }
@@ -33,7 +34,7 @@ export class CurrentWeatherComponent implements OnInit {
           this.temperature = main.temp.toFixed(0);
           this.city = this.cityName;
 
-          this.weatherConditionHandler(this.description);
+          this.weatherConditionIconUrl = this.utilityService.weatherConditionHandler(this.description);
         },
         error: (err) => {
           console.error(err);
@@ -42,9 +43,6 @@ export class CurrentWeatherComponent implements OnInit {
   }
 
   followCity() {
-    const city = this.city;
-
-
   }
 
   searchHandler(formValue: { searchedCity: string }) {
@@ -61,7 +59,7 @@ export class CurrentWeatherComponent implements OnInit {
             this.temperature = main.temp.toFixed(0);
             this.city = this.cityName;
 
-            this.weatherConditionHandler(this.description);
+            this.weatherConditionIconUrl = this.utilityService.weatherConditionHandler(this.description);
           },
           error: (err) => {
             console.error(err);
@@ -75,44 +73,18 @@ export class CurrentWeatherComponent implements OnInit {
         .subscribe({
           next: (data) => {
             const { main, name, sys, visibility, weather, wind } = data;
-            // console.log(main, name, sys, visibility, weather, wind);
             const [description] = weather;
             const { main: desc } = description;
             this.description = desc;
             this.temperature = main.temp.toFixed(0);
             this.city = this.cityName;
 
-            this.weatherConditionHandler(this.description);
+            this.weatherConditionIconUrl = this.utilityService.weatherConditionHandler(this.description);
           },
           error: (err) => {
             console.error(err);
           }
         })
-    }
-  }
-
-  weatherConditionHandler(description) {
-    const dateNow = new Date();
-    const timeNow = +moment(dateNow).format("k");
-
-    if (description === 'Clear' && timeNow <= 17) {
-      this.weatherConditionIconUrl = "../../../assets/img/weather-conditions/";
-      this.weatherConditionIconUrl += 'clear-sun.svg';
-    } else if (description === 'Clear' && timeNow >= 17) {
-      this.weatherConditionIconUrl = "../../../assets/img/weather-conditions/";
-      this.weatherConditionIconUrl += 'clear-moon.svg';
-    } else if (description === 'Rain') {
-      this.weatherConditionIconUrl = "../../../assets/img/weather-conditions/";
-      this.weatherConditionIconUrl += description.toLowerCase() + '.svg';
-    } else if (description === 'Snow') {
-      this.weatherConditionIconUrl = "../../../assets/img/weather-conditions/";
-      this.weatherConditionIconUrl += description.toLowerCase() + '.svg';
-    } else if (description === 'Clouds') {
-      this.weatherConditionIconUrl = "../../../assets/img/weather-conditions/";
-      this.weatherConditionIconUrl += description.toLowerCase() + '.svg';
-    } else if (description === 'Thunderstorm') {
-      this.weatherConditionIconUrl = "../../../assets/img/weather-conditions/";
-      this.weatherConditionIconUrl += description.toLowerCase() + '.svg';
     }
   }
 }

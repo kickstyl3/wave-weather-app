@@ -2,7 +2,7 @@
     <article class="hourly-weather">
         <article *ngFor="let hour of hourList" class="hourly-weather-card">
             <p>{{formatHour(hour.dt)}}</p>
-            <img class="icon" src="../../../assets/img/weather-conditions/clear-moon.svg" alt="">
+            <img class="icon" src={{weatherConditionHandler(hour.weather[0].main)}} alt="">
             <p>{{hour.main.temp.toFixed(0)}}&#176;</p>
         </article>
     </article>
