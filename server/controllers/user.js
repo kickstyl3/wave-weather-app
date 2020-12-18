@@ -19,23 +19,32 @@ module.exports = {
 
     post: {
         signup: async (req, res, next) => {
-            const { name, email, password } = req.body;
-            const hashedPassword = await utils.auth.hashPassword(password);
+            const { name, email, password, confirmPassword } = req.body;
+            console.log('pass', password);
+            console.log('confirm', confirmPassword);
 
-            try {
-                const newUser = await User.create({
-                    name,
-                    email,
-                    password: hashedPassword
-                });
+            if (utils.validations.isNameValid(name) &&
+                (utils.validations.isEmailValid(email)) &&
+                (utils.validations.isPasswordValid(password, confirmPassword))) {
+                const hashedPassword = await utils.auth.hashPassword(password);
 
-                const user = await User.findOne({ email }).lean();
-                const token = utils.jwt.createToken({ id: user._id });
+                try {
+                    const newUser = await User.create({
+                        name,
+                        email,
+                        password: hashedPassword
+                    });
 
-                res.cookie(authCookieName, token).send(user);
-            } catch (e) {
-                console.error(e);
-                next();
+                    const user = await User.findOne({ email }).lean();
+                    const token = utils.jwt.createToken({ id: user._id });
+
+                    res.cookie(authCookieName, token).send(user);
+                } catch (e) {
+                    console.error(e);
+                    next();
+                }
+            } else {
+                console.error('Your form has errors.')
             }
         },
 
