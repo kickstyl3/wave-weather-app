@@ -9,13 +9,19 @@ import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
 import { WeatherRoutingModule } from './weather.routing.module';
 import { DetailsComponent } from './details/details.component';
+import { WeatherNowComponent } from './weather-now/weather-now.component';
+import { WeatherOptionsComponent } from './weather-options/weather-options.component';
+import { SearchWeatherComponent } from './search-weather/search-weather.component';
 
 @NgModule({
   declarations: [
     CurrentWeatherComponent,
     HourlyWeatherComponent,
     DailyWeatherComponent,
-    DetailsComponent
+    DetailsComponent,
+    WeatherNowComponent,
+    WeatherOptionsComponent,
+    SearchWeatherComponent
   ],
   imports: [
     CommonModule,
@@ -28,9 +34,7 @@ import { DetailsComponent } from './details/details.component';
     WeatherService
   ],
   exports: [
-    CurrentWeatherComponent,
-    HourlyWeatherComponent,
-    DailyWeatherComponent
+    CurrentWeatherComponent
   ]
 })
 export class WeatherModule { }

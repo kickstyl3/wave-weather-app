@@ -1,0 +1,29 @@
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    max-width: 40%;
+    min-width: 40%;
+}
+
+.temperature {
+    font-size: 64px;
+    font-weight: 500;
+    color: white;
+}
+
+.city {
+    font-size: 46px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: white;
+}
+
+.description {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.866);
+    letter-spacing: 2px;
+}

@@ -1,25 +1,8 @@
 <section class="weather-wrapper">
-    <article class="current-weather">
-        <img class="icon" src={{weatherConditionIconUrl}} alt="">
-        <p class="temperature">{{temperature}}&#176;</p>
-        <p class="city">{{city}}</p>
-        <p class="description">{{description}}</p>
-    </article>
-    <article class="search-bar-wrapper">
-        <form #f="ngForm" (ngSubmit)="searchHandler(f.value); f.reset()">
-            <button class="search-btn"><i class="fas fa-search"></i></button>
-            <input name="searchedCity" class="search-bar" type="text" placeholder="Search by City..." ngModel>
-            <button class="location-btn"><i class="fas fa-location-arrow"></i></button>
-        </form>
-    </article>
-    <article class="follow-btn-wrapper">
+    <app-weather-now></app-weather-now>
+    <app-search-weather></app-search-weather>
+    <!-- <article class="follow-btn-wrapper">
         <button (click)="followCity()" class="follow-btn">Follow</button>
-    </article>
-    <article class="details-btn-wrapper">
-        <button class="details-btn" [routerLink]="['/weather/details', routeId]">Details</button>
-    </article>
-    <article class="weather-options">
-        <button class="daily-btn" [routerLink]="['/weather/daily', routeId]">Daily</button>
-        <button class="hourly-btn" [routerLink]="['/weather/hourly', routeId]">Hourly</button>
-    </article>
+    </article> -->
+    <app-weather-options></app-weather-options>
 </section>

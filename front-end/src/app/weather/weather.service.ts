@@ -1,10 +1,15 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 @Injectable()
 export class WeatherService {
+  city: string;
+  description: string;
+  temperature: number;
+  weatherConditionIconUrl: string;
+  routeId: number;
   dailyWeatherCity$: string;
 
   constructor(private http: HttpClient) { }
