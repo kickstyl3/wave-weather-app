@@ -1,24 +1,36 @@
-.hourly-weather-wrapper {
+section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     height: 90vh;
-}
-
-.hourly-weather {
-    display: flex;
-    text-align: center;
-    flex-basis: 55%;
     align-items: center;
 }
 
+.hourly-weather-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hourly-weather {
+    margin-top: 20px;
+    margin-bottom: -30px;   
+    display: flex;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px 2px black;
+}
+
 .hourly-weather-card {
-    padding: 20px 0px;
+    padding: 20px 10px;
     border: 1px solid rgba(255, 255, 255, 0.267);
-    background-color: rgba(0, 0, 0, 0.473);
+    background: linear-gradient(180deg, rgba(0,66,83,1) 0%, rgba(42,0,82,1) 50%, rgba(15,0,29,1) 100%);
 }
 
 .icon {
-    max-width: 50%;
+    max-height: 150px;
+    max-width: 150px;
+    width: 150px;
+    height: 150px;
     padding-top: 20px;
     padding-bottom: 20px;
 }

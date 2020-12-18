@@ -1,6 +1,6 @@
 section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     height: 90vh;
     align-items: center;
@@ -9,17 +9,17 @@ section {
 .details-wrapper {
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 40%;
     text-align: center;
-    border-left: 1px solid rgba(255, 255, 255, 0.267);
-    border-right: 1px solid rgba(255, 255, 255, 0.267);
-    background-color: rgba(0, 0, 0, 0.473);
+    border-left: 1px solid rgba(255, 255, 255, 0.356);
+    border-right: 1px solid rgba(255, 255, 255, 0.356);
+    background: linear-gradient(180deg, rgba(0,61,117,1) 0%, rgba(0,38,73,1) 100%);
     box-shadow: 0px 0px 20px 10px rgba(21, 109, 167, 0.767);
+    margin-top: 30px;
 }
 
 article {
-    padding: 50px 0px;
-    width: 25%;
+    padding: 20px 0px;
+    width: 20%;
     border: 1px solid rgba(255, 255, 255, 0.267);
     border-left: 0;
     border-right: 0;
@@ -53,7 +53,7 @@ article>button {
     text-transform: uppercase;
 }
 
-article > button:hover {
+article>button:hover {
     background-color: rgba(0, 0, 0, 0.76);
     cursor: pointer;
     transition: ease-out 0.2s;
