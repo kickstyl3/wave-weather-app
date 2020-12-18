@@ -13,6 +13,7 @@ export class CurrentWeatherComponent implements OnInit {
   temperature: number;
   cityName: string;
   weatherConditionIconUrl: string;
+  routeId: number;
 
   constructor(
     private utilityService: UtilityService,
@@ -30,6 +31,7 @@ export class CurrentWeatherComponent implements OnInit {
           const { main, weather } = data;
           const [description] = weather;
           const { main: desc } = description;
+          this.routeId = data.id;
           this.description = desc;
           this.temperature = main.temp.toFixed(0);
           this.city = this.cityName;

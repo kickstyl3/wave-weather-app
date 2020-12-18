@@ -11,21 +11,21 @@ const routes: Routes = [
         canActivateChild: [AuthGuard],
         children: [
             {
-                path: 'details',
+                path: 'details/:id',
                 component: DetailsComponent,
                 data: {
                     // isLogged: true
                 }
             },
             {
-                path: 'daily',
+                path: 'daily/:id',
                 component: DailyWeatherComponent,
                 data: {
                     // isLogged: true
                 }
             },
             {
-                path: 'hourly',
+                path: 'hourly/:id',
                 component: HourlyWeatherComponent,
                 data: {
                     // isLogged: true

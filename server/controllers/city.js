@@ -43,6 +43,7 @@ module.exports = {
             try {
                 const currentCity = req.headers['current-city'];
 
+                console.log(req.params);
                 let lon = '';
                 let lat = '';
 
