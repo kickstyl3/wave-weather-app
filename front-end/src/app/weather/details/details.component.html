@@ -1,4 +1,5 @@
 <section>
+    <app-weather-now></app-weather-now>
     <div class="details-wrapper">
         <article class="sunrise">
             <p>Sunrise</p>
@@ -36,12 +37,10 @@
             <p>Pressure</p>
             <span>{{pressure}} hPa</span>
         </article>
-        <article class="back-btn">
-            <button (click)="goBack()">Back</button>
-        </article>
         <article class="visibility">
             <p>Visibility</p>
             <span>{{visibility}}m</span>
         </article>
     </div>
+    <app-weather-options></app-weather-options>
 </section>

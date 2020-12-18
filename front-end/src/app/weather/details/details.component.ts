@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { WeatherService } from '../weather.service';
 import * as moment from 'moment';
 
@@ -21,7 +20,6 @@ export class DetailsComponent implements OnInit {
   visibility: number;
 
   constructor(
-    private router: Router,
     private weatherService: WeatherService
   ) { }
 
@@ -53,9 +51,4 @@ export class DetailsComponent implements OnInit {
         }
       })
   }
-
-  goBack() {
-    this.router.navigate(['/']);
-  }
-
 }

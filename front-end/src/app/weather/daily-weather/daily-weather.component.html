@@ -1,4 +1,5 @@
 <section class="daily-weather-wrapper">
+    <app-weather-now></app-weather-now>
     <article *ngFor="let day of dailyData" class="daily-weather">
         <p class="day">{{formatDay(day.dt)}}</p>
         <img class="icon" src={{weatherConditionHandler(day.weather[0].main)}} alt="">
@@ -19,4 +20,5 @@
             </article>
         </div>
     </article>
+    <app-weather-options></app-weather-options>
 </section>
