@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthGuard } from '../core/guards/auth.guard';
-import { LoaderComponent } from './loader/loader.component';
+import { UtilityService } from './utility.service';
 
 @NgModule({
-  declarations: [LoaderComponent],
+  declarations: [],
   imports: [
     CommonModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    UtilityService
   ],
-  exports: []
+  exports: [
+    UtilityService
+  ]
 })
 export class SharedModule { }

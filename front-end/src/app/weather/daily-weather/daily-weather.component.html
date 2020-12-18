@@ -1,7 +1,7 @@
 <section class="daily-weather-wrapper">
     <article *ngFor="let day of dailyData" class="daily-weather">
         <p class="day">{{formatDay(day.dt)}}</p>
-        <img class="icon" src="../../../assets/img/weather-conditions/clear-moon.svg" alt="">
+        <img class="icon" src={{weatherConditionHandler(day.weather[0].main)}} alt="">
         <p class="temperature">{{day.temp.day.toFixed(0)}}&#176;</p>
         <p class="description">{{day.weather[0].main}}</p>
         <div class="weather-icons">
