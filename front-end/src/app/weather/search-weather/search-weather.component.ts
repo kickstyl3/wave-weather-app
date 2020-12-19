@@ -10,7 +10,7 @@ import { WeatherService } from '../weather.service';
 export class SearchWeatherComponent implements OnInit {
   cityName: string;
   routeId: number;
-  coordinates: {};
+  // coordinates: {};
 
   constructor(
     private weatherService: WeatherService,
@@ -20,32 +20,32 @@ export class SearchWeatherComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getUserLocation() {
-    const coordinates = navigator.geolocation.getCurrentPosition((position) => {
-      this.coordinates = {
-        lat: position.coords.latitude,
-        lon: position.coords.longitude
-      }
-    })
+  // getUserLocation() {
+  //   const coordinates = navigator.geolocation.getCurrentPosition((position) => {
+  //     this.coordinates = {
+  //       lat: position.coords.latitude,
+  //       lon: position.coords.longitude
+  //     }
+  //   })
 
-    if (this.coordinates) {
-      this.weatherService.getWeatherByLocation(this.coordinates)
-      .subscribe({
-        next: (data) => {
-          const { main, weather } = data;
-            const [description] = weather;
-            const { main: desc } = description;
-            this.weatherService.routeId = data.id;
-            this.weatherService.city = data.name;
-            this.weatherService.description = desc;
-            this.weatherService.temperature = main.temp.toFixed(0);
-            console.log(data);
+  //   if (this.coordinates) {
+  //     this.weatherService.getWeatherByLocation(this.coordinates)
+  //     .subscribe({
+  //       next: (data) => {
+  //         const { main, weather } = data;
+  //           const [description] = weather;
+  //           const { main: desc } = description;
+  //           this.weatherService.routeId = data.id;
+  //           this.weatherService.city = data.name;
+  //           this.weatherService.description = desc;
+  //           this.weatherService.temperature = main.temp.toFixed(0);
+  //           console.log(data);
 
-            this.weatherService.weatherConditionIconUrl = this.utilityService.weatherConditionHandler(desc);
-        }
-      })
-    }
-  }
+  //           this.weatherService.weatherConditionIconUrl = this.utilityService.weatherConditionHandler(desc);
+  //       }
+  //     })
+  //   }
+  // }
 
   searchHandler(formValue: { searchedCity: string }) {
     this.cityName = formValue.searchedCity;

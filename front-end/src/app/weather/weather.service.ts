@@ -62,16 +62,16 @@ export class WeatherService {
     )
   }
 
-  getWeatherByLocation(data): Observable<any> {
-    const coordinatesHeaders = new HttpHeaders()
-      .set('lat', data.lat)
-      .set('lon', data.lon);
+  // getWeatherByLocation(data): Observable<any> {
+  //   const coordinatesHeaders = new HttpHeaders()
+  //     .set('lat', data.lat)
+  //     .set('lon', data.lon);
 
-    return this.http.get('/city/location-weather', { headers: coordinatesHeaders }).pipe(
-      tap((city) => console.log(city)),
-      catchError(() => {
-        return [null];
-      })
-    )
-  }
+  //   return this.http.get('/city/location-weather', { headers: coordinatesHeaders }).pipe(
+  //     tap((city) => console.log(city)),
+  //     catchError(() => {
+  //       return [null];
+  //     })
+  //   )
+  // }
 }
