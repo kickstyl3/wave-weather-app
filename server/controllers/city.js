@@ -7,6 +7,7 @@ const weather = require('../utils/weather');
 //GeoCoding API
 const geocodingApiKey = process.env.geocodingApiKey;
 const geocodingApiUrl = `https://api.geoapify.com/v1/geocode/search?text=`;
+const weatherByLocationUrl = `https://api.geoapify.com/v1/geocode/reverse?`;
 const geocodingApiKeyUrl = `&apiKey=${geocodingApiKey}`;
 
 module.exports = {
@@ -19,6 +20,28 @@ module.exports = {
                     request(weather.getWeatherByCity(currentCity), function (error, response, body) {
                         res.status(200).send(JSON.parse(body));
                     })
+                }
+            } catch (e) {
+                console.error(e);
+                next();
+            }
+        },
+        weatherByLocation: async (req, res, next) => {
+            try {
+                const lat = req.headers.lat;
+                const lon = req.headers.lon;
+
+                console.log(lat);
+                console.log(lon);
+
+                if (lat !== undefined && lon !== undefined) {
+                    setTimeout(() => {
+                        request(weather.getWeatherByLocation(lat, lon), function (error, response, body) {
+                            console.log('body');
+                            console.log(JSON.parse(body));
+                            res.status(200).send(JSON.parse(body));
+                        })
+                    }, 1000);
                 }
             } catch (e) {
                 console.error(e);
@@ -43,7 +66,6 @@ module.exports = {
             try {
                 const currentCity = req.headers['current-city'];
 
-                console.log(req.params);
                 let lon = '';
                 let lat = '';
 
