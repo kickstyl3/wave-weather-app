@@ -1,7 +1,7 @@
-<article class="details-btn-wrapper">
+<article *ngIf="(isLogged$ | async)" class="details-btn-wrapper">
     <button class="details-btn" [routerLink]="['/weather/details', routeId]">Details</button>
 </article>
-<article class="weather-options">
+<article *ngIf="(isLogged$ | async)" class="weather-options">
     <button class="daily-btn" [routerLink]="['/weather/daily', routeId]">Daily</button>
     <button class="hourly-btn" [routerLink]="['/weather/hourly', routeId]">Hourly</button>
 </article>

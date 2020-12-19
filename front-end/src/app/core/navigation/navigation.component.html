@@ -10,9 +10,9 @@
             <li *ngIf="!(isLogged$ | async)" class="sign-up">
                 <a [routerLink]="['/user/signup']">Sign Up</a>
             </li>
-            <li *ngIf="(isLogged$ | async)" class="my-cities">
+            <!-- <li *ngIf="(isLogged$ | async)" class="my-cities">
                 <a [routerLink]="['/user/my-cities']">My Cities</a>
-            </li>
+            </li> -->
             <li *ngIf="(isLogged$ | async)" class="logout">
                 <a (click)="logoutHandler()">Logout</a>
             </li>

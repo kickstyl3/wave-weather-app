@@ -15,16 +15,16 @@ form {
 .search-bar {
     width: 500px;
     height: 55px;
-    background-color: rgba(255, 255, 255, 0.192);
+    background-color: rgba(0, 0, 0, 0.075);
     padding-left: 10px;
     border-right: 0;
     border-left: 0;
     font-size: 20px;
-    color: rgba(0, 0, 0, 0.63);
+    color: rgba(255, 255, 255, 0.87);
 }
 
 .search-bar::placeholder {
-    color: rgba(63, 63, 63, 0.685);
+    color: rgba(248, 248, 248, 0.521);
     font-size: 20px;
 }
 
@@ -51,7 +51,7 @@ form {
     color: rgb(14, 74, 212);
     padding-right: 15px;
     padding-left: 15px;
-    background-color: rgba(255, 255, 255, 0.192);
+    background-color: rgba(0, 0, 0, 0.075);
     cursor: pointer;
     font-size: 18px;
     border-left: 0;

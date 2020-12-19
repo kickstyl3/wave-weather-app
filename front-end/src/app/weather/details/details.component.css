@@ -12,8 +12,8 @@ section {
     text-align: center;
     border-left: 1px solid rgba(255, 255, 255, 0.356);
     border-right: 1px solid rgba(255, 255, 255, 0.356);
-    background: linear-gradient(180deg, rgba(0,61,117,1) 0%, rgba(0,38,73,1) 100%);
-    box-shadow: 0px 0px 20px 10px rgba(21, 109, 167, 0.767);
+    background: linear-gradient(180deg, rgba(0, 60, 117, 0.226) 0%, rgba(0, 38, 73, 0.322) 100%);
+    box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.281);
     margin-top: 30px;
 }
 

@@ -18,7 +18,7 @@ section {
     align-items: center;
     flex-direction: column;
     padding: 0px 30px;
-    background: linear-gradient(180deg, rgba(0, 61, 96, 1) 0%, rgba(51, 21, 102, 1) 44%, rgba(40, 16, 80, 1) 72%, rgba(0, 0, 0, 1) 92%);
+    background: linear-gradient(180deg, rgba(0, 61, 96, 0.753) 0%, rgba(51, 21, 102, 0.753) 44%, rgba(40, 16, 80, 0.753) 72%, rgba(0, 0, 0, 1) 92%);
     margin: 0px 20px;
     border-radius: 5px;
     width: 220px;
