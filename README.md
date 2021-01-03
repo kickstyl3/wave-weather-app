@@ -15,7 +15,7 @@ Would you like more information about the next 5 days, 8 hours or just to check 
 - **AuthGuard** used for protecting routes
 - **AuthInterceptor** used for sending important data along with requests
 - **AuthService** used for authentication functionality
-- **WeatherService** used for sending
+- **WeatherService** used for sending requests to weather api
 - **UtilityService** used for business logic
 ## How to start the project
 - **Download**/**Clone** the project
